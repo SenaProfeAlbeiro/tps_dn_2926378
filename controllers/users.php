@@ -8,7 +8,7 @@
 
             $user = new User;
 
-            $user->setUserName('Pepito');
+            $user->setUserName('Albeirito');
             echo $user->getUserName();
 
         }
