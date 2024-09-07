@@ -2,8 +2,18 @@
     require_once "models/User.php";
     class Users {
         public function create_user(){
-            $user = new User(
-                null,
+            
+            // Crear un objeto con los métodos set
+            $user1 = new User;
+            $user1->setUserId(1);
+            $user1->setUserName("María");            
+            echo "Código: " . $user1->getUserId() . "<br>";            
+            echo "Nombre: " . $user1->getUserName() . "<br>";
+            echo "<br>";
+            
+            // Crear un objeto con el constructor
+            $user2 = new User(
+                2,
                 'José',
                 null,
                 null,
@@ -11,8 +21,8 @@
                 null,
                 null
             );
-            // print_r($user);
-            $user->user_create();            
+            echo "Código: " . $user2->getUserId() . "<br>";            
+            echo "Nombre: " . $user2->getUserName() . "<br>";            
         }
     }
 ?>
