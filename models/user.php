@@ -136,7 +136,7 @@
                 $stmt->bindValue('socio_email', $this->getUserEmail());                
                 $stmt->bindValue('socio_telefono', $this->getUserPhone());                
                 $stmt->bindValue('socio_categoria', $this->getUserCategory());                
-                $stmt->bindValue('socio_pass', $this->getUserPass());                
+                $stmt->bindValue('socio_pass', sha1($this->getUserPass()));                
                 $stmt->bindValue('socio_estado', $this->getUserStatus());                
                 $stmt->execute();
             } catch (Exception $e) {
