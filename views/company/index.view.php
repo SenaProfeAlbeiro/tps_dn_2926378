@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empresa</title>
     <!-- Estilos -->
-    <link rel="shortcut icon" href="img/css.png">
-    <link rel="stylesheet" href="css/all.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="assets/landing/img/css.png">
+    <link rel="stylesheet" href="assets/landing/css/all.css">
+    <link rel="stylesheet" href="assets/landing/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/landing/css/styles.css">
     
 </head>
 <body>    
@@ -24,7 +24,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form action="" method="POST">
+                  <form action="Login.php" method="POST">
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Email address</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -38,7 +38,7 @@
                       <input type="checkbox" class="form-check-input" id="exampleCheck1">
                       <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div>
-                    <a href="../dashboard/index.html" class="btn btn-primary">Submit</a>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
                 </div>                
               </div>
@@ -49,7 +49,7 @@
             <div class="container-fluid">
               <a class="navbar-brand" href="#">
                 <i class="fa-brands fa-facebook"></i>
-                <!-- <img src="img/css.png" alt=""> -->
+                <!-- <img src="assets/landing/img/css.png" alt=""> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -88,7 +88,7 @@
           </nav>
         <!-- <nav class="row">
             <div class="col-12 col-lg-2 logo">
-                <img src="img/css.png" alt="">
+                <img src="assets/landing/img/css.png" alt="">
             </div>
             <div class="col-12 col-md-10 col-lg-8 navega"></div>
             <div class="col-12 col-md-2 col-lg-2 ingreso"></div>
@@ -103,21 +103,21 @@
                 </div>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="img/horse-8209533_1280.jpg" class="d-block w-100" alt="...">
+                    <img src="assets/landing/img/horse-8209533_1280.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Bienvenidos</h5>
                       <p>Some representative placeholder content for the first slide.</p>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="img/horse-8209533_1280_2.jpg" class="d-block w-100" alt="...">
+                    <img src="assets/landing/img/horse-8209533_1280_2.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Second slide label</h5>
                       <p>Some representative placeholder content for the second slide.</p>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="img/horse-8209533_1280_3.jpg" class="d-block w-100" alt="...">
+                    <img src="assets/landing/img/horse-8209533_1280_3.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Third slide label</h5>
                       <p>Some representative placeholder content for the third slide.</p>
@@ -183,7 +183,7 @@
         <footer class="row border"></footer>        
     </div>    
     <!-- Scripts -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="assets/landing/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/landing/js/scripts.js"></script>
 </body>
 </html>
