@@ -17,7 +17,7 @@
             $user = new User();
             $user->setRolCode("1");
             $user->setRolName("Administrador");            
-            echo "Código :     " . $user->getRolCode();
+            echo "<br>Código :     " . $user->getRolCode();
             echo "<br>Nombre Rol : " . $user->getRolName();
             // Obj02
             echo "<br><br>Objeto 2<br>";
