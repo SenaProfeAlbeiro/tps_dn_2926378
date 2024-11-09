@@ -12,13 +12,38 @@
         
         // Controlador de Rol
         public function rolCreate(){            
-            $user = new User;
+            // Obj01
+            $user = new User();
             $user->setRolCode("1");
             $user->setRolName("Administrador");
 
             echo "Datos del Rol <br>";
             echo "<br>Código :     " . $user->getRolCode();
             echo "<br>Nombre Rol : " . $user->getRolName();
+            // Obj02
+            echo "<br>Objeto 2<br>";
+            $user02 = new User("correo@correo.com","12345");
+            print_r($user02);
+            // Obj03
+            echo "<br>Objeto 3<br>";
+            $user03 = new User(
+                2,
+                "Cliente",
+                123,
+                "Pepito",
+                "Perez",
+                "100010011002",
+                "correo@correo.com",
+                "12345",                
+                0
+            );
+            print_r($user03);
+
+            echo "Datos del Rol <br>";
+            echo "<br>Código :     " . $user03->getRolCode();
+            echo "<br>Nombre Rol : " . $user03->getRolName();
+
+            
         }
 
         public function userCreate(){
