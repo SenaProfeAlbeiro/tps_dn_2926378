@@ -12,13 +12,13 @@
         
         // Controlador de Rol
         public function rolCreate(){            
-            $prueba = new User;
-            $prueba->setRolCode("1");
-            $prueba->setRolName("Administrador");
+            $user = new User;
+            $user->setRolCode("1");
+            $user->setRolName("Administrador");
 
             echo "Datos del Rol <br>";
-            echo "<br>Código :     " . $prueba->getRolCode();
-            echo "<br>Nombre Rol : " . $prueba->getRolName();
+            echo "<br>Código :     " . $user->getRolCode();
+            echo "<br>Nombre Rol : " . $user->getRolName();
         }
 
         public function userCreate(){

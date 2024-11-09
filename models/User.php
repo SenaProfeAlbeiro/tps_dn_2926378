@@ -1,8 +1,7 @@
 <?php
 
 class User{
-
-    // Atributos
+    /* -------- ATRIBUTOS ------- */
     private $rol_code;
     private $rol_name;
     private $user_code;
@@ -12,9 +11,22 @@ class User{
     private $user_email;
     private $user_pass;
     private $user_status;
+    
+    /* --------- MÉTODOS --------- */ 
+    
+    /* Sobrecarga de constructores */
+    public function __construct(){
+        $a = func_get_args();
+        $i = func_num_args();
+        if (method_exists($this, $f = '__construct' . $i)) {
+            call_user_func_array(array($this, $f), $a);
+        }
+    }
 
-    // MÉTODOS
-    // Métodos Setters y Getters
+    
+
+
+    /* Métodos Setters y Getters */
 
     // Código del rol
     public function setRolCode($rol_code){
