@@ -12,35 +12,19 @@
         
         // Controlador de Rol
         public function rolCreate(){            
-            // Obj01
-            echo "<br>Objeto 1<br>";
-            $user = new User();
-            $user->setRolCode("1");
-            $user->setRolName("Administrador");            
-            echo "<br>Código :     " . $user->getRolCode();
-            echo "<br>Nombre Rol : " . $user->getRolName();
-            // Obj02
-            echo "<br><br>Objeto 2<br>";
-            $user02 = new User("correo@correo.com","12345");
-            print_r($user02);
-            // Obj03
-            echo "<br><br>Objeto 3<br>";
-            $user03 = new User(
-                2,
-                "Cliente",
-                123,
-                "Pepito",
-                "Perez",
-                "100010011002",
-                "correo@correo.com",
-                "12345",                
-                0
-            );
-            print_r($user03);
-            echo "<br><br>Código :     " . $user03->getRolCode();
-            echo "<br>Nombre Rol : " . $user03->getRolName();
+            if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+                require_once "views/roles/admin/header.view.php";
+                require_once "views/modules/users/rol_create.view.php";          
+                require_once "views/roles/admin/footer.view.php";                
+            }
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $rol = new User;
+                $rol->setRolCode(null);
+                $rol->setRolName($_POST['rol_name']);
+                $rol->createRol();                
+                header("Location: ?c=Users&a=userRead");
+            }
 
-            
         }
 
         public function userCreate(){

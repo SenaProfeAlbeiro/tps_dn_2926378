@@ -81,8 +81,6 @@ class User{
             die($e->getMessage());
         }
     }
-
-
 }
 
 ?>

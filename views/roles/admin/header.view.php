@@ -24,6 +24,9 @@
             <aside class="col-3 border">
                 <h2>Usuarios</h2>
                 <div>
+                    <a href="?c=Users&a=rolCreate">Registrar Rol</a>
+                </div>
+                <div>
                     <a href="?c=Users&a=userCreate">Registrar Usuario</a>
                 </div>
                 <div>
