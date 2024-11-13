@@ -2,6 +2,7 @@
 
 class User{
     /* -------- ATRIBUTOS ------- */
+    private $dbh;
     private $rol_code;
     private $rol_name;
     private $user_code;
@@ -16,11 +17,17 @@ class User{
     
     /* Sobrecarga de constructores */
     public function __construct(){
-        $a = func_get_args();
-        $i = func_num_args();
-        if (method_exists($this, $f = '__construct' . $i)) {
-            call_user_func_array(array($this, $f), $a);
+        try {
+            $this->dbh = DataBase::connection();
+            $a = func_get_args();
+            $i = func_num_args();
+            if (method_exists($this, $f = '__construct' . $i)) {
+                call_user_func_array(array($this, $f), $a);
+            }
+        } catch (Exception $e) {
+            die($e->getMessage());
         }
+        
     }
 
     // Constructor de 2 parámetros (inicio sesión)
@@ -44,7 +51,7 @@ class User{
 
 
     /* Métodos Setters y Getters */
-
+    
     // Código del rol
     public function setRolCode($rol_code){
         $this->rol_code = $rol_code;
@@ -59,7 +66,21 @@ class User{
     public function getRolName(){
         return $this->rol_name;
     }
+    
+    /* Métodos Persistencia a la Base de datos */
 
+    # RF04_CU04 - Registrar Rol
+    public function createRol(){
+        try {
+            $sql = 'INSERT INTO ROLES VALUES (:rolCode,:rolName)';
+            $stmt = $this->dbh->prepare($sql);
+            $stmt->bindValue('rolCode', $this->getRolCode());
+            $stmt->bindValue('rolName', $this->getRolName());
+            $stmt->execute();
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 
 
 }

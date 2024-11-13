@@ -1,4 +1,5 @@
 <?php
+    require_once "models/DataBase.php";
     if (!isset($_REQUEST['c'])) {
         require_once "controllers/Users.php";
         $controller = new Users;
