@@ -27,6 +27,9 @@
                     <a href="?c=Users&a=rolCreate">Registrar Rol</a>
                 </div>
                 <div>
+                    <a href="?c=Users&a=rolRead">Consultar Roles</a>
+                </div>
+                <div>
                     <a href="?c=Users&a=userCreate">Registrar Usuario</a>
                 </div>
                 <div>

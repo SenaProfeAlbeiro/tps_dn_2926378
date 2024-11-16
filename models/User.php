@@ -31,6 +31,9 @@ class User{
     }
 
     // Constructor de 2 parámetros (inicio sesión)
+    public function __construct0(){}
+
+    // Constructor de 2 parámetros (inicio sesión)
     public function __construct2($user_email,$user_pass){        
         $this->user_email = $user_email;
         $this->user_pass = $user_pass;        
@@ -77,6 +80,23 @@ class User{
             $stmt->bindValue('rolCode', $this->getRolCode());
             $stmt->bindValue('rolName', $this->getRolName());
             $stmt->execute();
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+    # RF05_CU05 - Consultar Roles
+    public function readRoles(){
+        try {
+            $rolList = [];
+            $sql = 'SELECT * FROM ROLES';
+            $stmt = $this->dbh->query($sql);
+            foreach ($stmt->fetchAll() as $rol) {
+                $rolObj = new User;
+                $rolObj->setRolCode($rol['rol_code']);
+                $rolObj->setRolName($rol['rol_name']);
+                array_push($rolList, $rolObj);
+            }
+            return $rolList;
         } catch (Exception $e) {
             die($e->getMessage());
         }

@@ -22,9 +22,16 @@
                 $rol->setRolCode(null);
                 $rol->setRolName($_POST['rol_name']);
                 $rol->createRol();                
-                header("Location: ?c=Users&a=userRead");
+                header("Location: ?c=Users&a=rolRead");
             }
-
+        }
+        
+        public function rolRead(){
+            $roles = new User;
+            $roles = $roles->readRoles();            
+            require_once "views/roles/admin/header.view.php";
+            require_once "views/modules/users/rol_read.view.php";          
+            require_once "views/roles/admin/footer.view.php";
         }
 
         public function userCreate(){
