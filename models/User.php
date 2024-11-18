@@ -101,6 +101,22 @@ class User{
             die($e->getMessage());
         }
     }
+    # RF06_CU06 - Obtener el Rol por el código
+    public function getRolById($rolCode){
+        try {
+            $sql = "SELECT * FROM ROLES WHERE rol_code=:rolCode";
+            $stmt = $this->dbh->prepare($sql);
+            $stmt->bindValue('rolCode', $rolCode);
+            $stmt->execute();
+            $rolDb = $stmt->fetch();
+            $rol = new User;
+            $rol->setRolCode($rolDb['rol_code']);
+            $rol->setRolName($rolDb['rol_name']);
+            return $rol;
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 }
 
 ?>

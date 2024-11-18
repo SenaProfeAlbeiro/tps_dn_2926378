@@ -10,7 +10,7 @@
             require_once "views/roles/admin/footer.view.php";
         }
         
-        // Controlador de Rol
+        // Controlador para Registrar el Rol
         public function rolCreate(){            
             if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 require_once "views/roles/admin/header.view.php";
@@ -25,13 +25,32 @@
                 header("Location: ?c=Users&a=rolRead");
             }
         }
-        
+        // Controlador para consultar 'Todos' los Roles
         public function rolRead(){
             $roles = new User;
             $roles = $roles->readRoles();            
             require_once "views/roles/admin/header.view.php";
             require_once "views/modules/users/rol_read.view.php";          
             require_once "views/roles/admin/footer.view.php";
+        }
+        
+        // Controlador para actualizar un Rol        
+        public function rolUpdate(){            
+            if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+                $rolId = new User;
+                $rolId = $rolId->getRolById($_GET['idRol']);                
+                require_once "views/roles/admin/header.view.php";                
+                require_once "views/modules/users/rol_update.view.php";          
+                require_once "views/roles/admin/footer.view.php";
+                
+            }
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                // $rolUpdate = new User;
+                // $rolUpdate->setRolCode($_POST['rol_code']);
+                // $rolUpdate->setRolName($_POST['rol_name']);
+                // $rolUpdate->update_rol();
+                // header("Location: ?c=Users&a=rolRead");
+            }
         }
 
         public function userCreate(){
