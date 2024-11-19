@@ -45,13 +45,21 @@
                 
             }
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                // $rolUpdate = new User;
-                // $rolUpdate->setRolCode($_POST['rol_code']);
-                // $rolUpdate->setRolName($_POST['rol_name']);
-                // $rolUpdate->update_rol();
-                // header("Location: ?c=Users&a=rolRead");
+                $rolUpdate = new User;
+                $rolUpdate->setRolCode($_POST['rol_code']);
+                $rolUpdate->setRolName($_POST['rol_name']);
+                $rolUpdate->updateRol();
+                header("Location: ?c=Users&a=rolRead");
             }
         }
+
+        // Controlador para eliminar Rol
+        public function rolDelete(){            
+            $rol = new User;
+            $rol->deleteRol($_GET['idRol']);
+            header("Location: ?c=Users&a=rolRead");            
+        }
+
 
         public function userCreate(){
             require_once "views/roles/admin/header.view.php";            

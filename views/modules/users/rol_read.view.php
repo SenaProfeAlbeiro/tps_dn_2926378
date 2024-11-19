@@ -16,7 +16,7 @@
                         <a href="?c=Users&a=rolUpdate&idRol=<?php echo $rol->getRolCode(); ?>" class="editar">
                           <i class="fa-solid fa-pen-to-square"></i>
                         </a>
-                        <a href="" class="eliminar">
+                        <a href="?c=Users&a=rolDelete&idRol=<?php echo $rol->getRolCode(); ?>" class="eliminar">
                           <i class="fa-solid fa-trash-can"></i>
                         </a>
                       </td>

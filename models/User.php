@@ -117,6 +117,34 @@ class User{
             die($e->getMessage());
         }
     }
+    # RF07_CU07 - Actualizar Rol
+    public function updateRol(){
+        try {
+            $sql = 'UPDATE ROLES SET
+                        rol_code = :rolCode,
+                        rol_name = :rolName
+                    WHERE rol_code = :rolCode';
+            $stmt = $this->dbh->prepare($sql);
+            $stmt->bindValue('rolCode', $this->getRolCode());
+            $stmt->bindValue('rolName', $this->getRolName());
+            $stmt->execute();
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    # RF08_CU08 - Eliminar Rol
+    public function deleteRol($rolCode){
+        try {
+            $sql = 'DELETE FROM ROLES WHERE rol_code = :rolCode';
+            $stmt = $this->dbh->prepare($sql);
+            $stmt->bindValue('rolCode', $rolCode);
+            $stmt->execute();
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
 }
 
 ?>
